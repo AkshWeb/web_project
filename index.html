@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>FitFlex - Exercise Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">FitFlex</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Exercises</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Learn to Exercise the Right Way</h1>
+    <p>A simple library of exercises with muscle group, level and short instructions.</p>
+  </section>
+
+  <div class="container">
+
+    <div class="filters">
+      <button onclick="filterMuscle('all')">All</button>
+      <button onclick="filterMuscle('chest')">Chest</button>
+      <button onclick="filterMuscle('back')">Back</button>
+      <button onclick="filterMuscle('shoulders')">Shoulders</button>
+      <button onclick="filterMuscle('arms')">Arms</button>
+      <button onclick="filterMuscle('core')">Core</button>
+      <button onclick="filterMuscle('legs')">Legs</button>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" onkeyup="searchExercise()" placeholder="Search exercise...">
+    </div>
+
+    <div class="exercise-list">
+
+      <div class="exercise" data-muscle="legs">
+        <h3>Barbell Back Squat</h3>
+        <span class="tag">Legs</span>
+        <span class="tag">Intermediate</span>
+        <span class="tag">Barbell</span>
+        <p>Stand with feet shoulder width apart, bar on your shoulders. Bend your knees and lower down like sitting on a chair, then push back up.</p>
+      </div>
+
+      <div class="exercise" data-muscle="chest">
+        <h3>Push-Up</h3>
+        <span class="tag">Chest</span>
+        <span class="tag">Beginner</span>
+        <span class="tag">Bodyweight</span>
+        <p>Keep your body straight from head to heels. Lower your chest to the floor and push back up.</p>
+      </div>
+
+      <div class="exercise" data-muscle="back">
+        <h3>Conventional Deadlift</h3>
+        <span class="tag">Back</span>
+        <span class="tag">Advanced</span>
+        <span class="tag">Barbell</span>
+        <p>Bend at the hips, grip the bar, keep your back flat and stand up straight while holding the bar.</p>
+      </div>
+
+      <div class="exercise" data-muscle="back">
+        <h3>Pull-Up</h3>
+        <span class="tag">Back</span>
+        <span class="tag">Advanced</span>
+        <span class="tag">Pull-up Bar</span>
+        <p>Hang from the bar and pull yourself up until your chin is above it, then lower down slowly.</p>
+      </div>
+
+      <div class="exercise" data-muscle="shoulders">
+        <h3>Overhead Press</h3>
+        <span class="tag">Shoulders</span>
+        <span class="tag">Intermediate</span>
+        <span class="tag">Barbell</span>
+        <p>Hold the bar at your shoulders and press it straight up above your head, then lower back down.</p>
+      </div>
+
+      <div class="exercise" data-muscle="back">
+        <h3>Bent-Over Row</h3>
+        <span class="tag">Back</span>
+        <span class="tag">Intermediate</span>
+        <span class="tag">Barbell</span>
+        <p>Bend forward slightly, let the bar hang, then pull it up towards your stomach and lower it back down.</p>
+      </div>
+
+      <div class="exercise" data-muscle="chest">
+        <h3>Dumbbell Bench Press</h3>
+        <span class="tag">Chest</span>
+        <span class="tag">Beginner</span>
+        <span class="tag">Dumbbells</span>
+        <p>Lie on a bench holding a dumbbell in each hand. Push them up above your chest, then lower slowly.</p>
+      </div>
+
+      <div class="exercise" data-muscle="legs">
+        <h3>Walking Lunge</h3>
+        <span class="tag">Legs</span>
+        <span class="tag">Beginner</span>
+        <span class="tag">Dumbbells</span>
+        <p>Step forward and lower your back knee towards the floor, then push up and step forward with the other leg.</p>
+      </div>
+
+      <div class="exercise" data-muscle="legs">
+        <h3>Romanian Deadlift</h3>
+        <span class="tag">Legs</span>
+        <span class="tag">Intermediate</span>
+        <span class="tag">Barbell</span>
+        <p>Keep your legs almost straight and lower the bar down your legs, then squeeze your hips forward to stand.</p>
+      </div>
+
+      <div class="exercise" data-muscle="core">
+        <h3>Front Plank</h3>
+        <span class="tag">Core</span>
+        <span class="tag">Beginner</span>
+        <span class="tag">Bodyweight</span>
+        <p>Rest on your forearms and toes, keep your body in a straight line, and hold the position.</p>
+      </div>
+
+      <div class="exercise" data-muscle="legs">
+        <h3>Glute Bridge</h3>
+        <span class="tag">Legs</span>
+        <span class="tag">Beginner</span>
+        <span class="tag">Bodyweight</span>
+        <p>Lie on your back with knees bent, push your hips up towards the ceiling, then lower back down.</p>
+      </div>
+
+      <div class="exercise" data-muscle="core">
+        <h3>Farmer's Carry</h3>
+        <span class="tag">Core</span>
+        <span class="tag">Beginner</span>
+        <span class="tag">Dumbbells</span>
+        <p>Hold a heavy dumbbell in each hand and walk in a straight line while keeping your body upright.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>FitFlex - Exercise Library</p>
+    <p>This site is for learning purposes only, not medical advice.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
