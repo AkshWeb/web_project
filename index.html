@@ -1,152 +1,305 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>FitFlex - Exercise Library</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FitFlex — Exercise Library</title>
+<meta name="description" content="FitFlex is a plain-spoken exercise library: step-by-step instructions, muscle maps and coaching cues for the movements worth learning properly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <a href="index.html" class="logo">FitFlex</a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Exercises</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<a class="skip-link" href="#library">Skip to the exercise library</a>
+
+<header class="site-header">
+  <div class="shell">
+    <a class="wordmark" href="index.html">Fit<span>Flex</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Exercises</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
 
   <section class="hero">
-    <h1>Learn to Exercise the Right Way</h1>
-    <p>A simple library of exercises with muscle group, level and short instructions.</p>
+    <div class="shell">
+      <div>
+        <h1>Learn the movement<em>before you load the bar.</em></h1>
+        <p class="hero-lede">Every exercise here comes with the same three things: what it works, how to do it step by step, and the cue that fixes the mistake almost everyone makes.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#library">Browse the library</a>
+          <a class="btn btn-quiet" href="about.html">Why we built this</a>
+        </div>
+      </div>
+
+      <figure class="hero-figure">
+        <div data-bodymap data-interactive data-muscles=""></div>
+        <figcaption>Tap a muscle group to filter</figcaption>
+      </figure>
+    </div>
   </section>
 
-  <div class="container">
+  <section class="library" id="library">
+    <div class="shell">
 
-    <div class="filters">
-      <button onclick="filterMuscle('all')">All</button>
-      <button onclick="filterMuscle('chest')">Chest</button>
-      <button onclick="filterMuscle('back')">Back</button>
-      <button onclick="filterMuscle('shoulders')">Shoulders</button>
-      <button onclick="filterMuscle('arms')">Arms</button>
-      <button onclick="filterMuscle('core')">Core</button>
-      <button onclick="filterMuscle('legs')">Legs</button>
+      <div class="library-head">
+        <div>
+          <h2>The library</h2>
+          <p>Twelve movements that cover a whole week of training.</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="filters" role="group" aria-label="Filter by muscle group">
+          <button class="filter" type="button" data-group="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-group="chest" aria-pressed="false">Chest</button>
+          <button class="filter" type="button" data-group="back" aria-pressed="false">Back</button>
+          <button class="filter" type="button" data-group="shoulders" aria-pressed="false">Shoulders</button>
+          <button class="filter" type="button" data-group="arms" aria-pressed="false">Arms</button>
+          <button class="filter" type="button" data-group="core" aria-pressed="false">Core</button>
+          <button class="filter" type="button" data-group="legs" aria-pressed="false">Legs</button>
+        </div>
+        <div class="search">
+          <label for="search">Search</label>
+          <input type="search" id="search" placeholder="squat, dumbbell, plank…" autocomplete="off">
+        </div>
+      </div>
+
+      <p class="count" id="result-count" role="status" aria-live="polite"></p>
+
+      <div class="grid" id="exercise-grid">
+
+        <!-- ================= Barbell back squat ================= -->
+        <article class="exercise" data-name="barbell back squat" data-muscles="legs core" data-equipment="Barbell">
+          <div class="plate">
+            <div data-bodymap data-muscles="legs core"></div>
+            <div>
+              <h3>Barbell Back Squat</h3>
+              <ul class="meta">
+                <li class="level-intermediate">Intermediate</li>
+                <li>Barbell</li>
+                <li>Legs · Core</li>
+              </ul>
+              <p class="summary">The reference lower-body lift. Builds quads, glutes and the bracing strength everything else borrows from.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= Push-up ================= -->
+        <article class="exercise" data-name="push-up pushup" data-muscles="chest shoulders arms core" data-equipment="Bodyweight">
+          <div class="plate">
+            <div data-bodymap data-muscles="chest shoulders arms core"></div>
+            <div>
+              <h3>Push-Up</h3>
+              <ul class="meta">
+                <li class="level-beginner">Beginner</li>
+                <li>Bodyweight</li>
+                <li>Chest · Arms</li>
+              </ul>
+              <p class="summary">A moving plank. Trains the chest and triceps while teaching you to hold a rigid body under load.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= Deadlift ================= -->
+        <article class="exercise" data-name="conventional deadlift" data-muscles="back legs core" data-equipment="Barbell">
+          <div class="plate">
+            <div data-bodymap data-muscles="back legs core"></div>
+            <div>
+              <h3>Conventional Deadlift</h3>
+              <ul class="meta">
+                <li class="level-advanced">Advanced</li>
+                <li>Barbell</li>
+                <li>Back · Legs</li>
+              </ul>
+              <p class="summary">Picking heavy things up correctly. Works nearly every muscle on the back of your body at once.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= Pull-up ================= -->
+        <article class="exercise" data-name="pull-up pullup" data-muscles="back arms core" data-equipment="Pull-up bar">
+          <div class="plate">
+            <div data-bodymap data-muscles="back arms core"></div>
+            <div>
+              <h3>Pull-Up</h3>
+              <ul class="meta">
+                <li class="level-advanced">Advanced</li>
+                <li>Pull-up bar</li>
+                <li>Back · Arms</li>
+              </ul>
+              <p class="summary">The clearest measure of upper-body pulling strength. Builds the lats, mid-back and biceps together.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= Overhead press ================= -->
+        <article class="exercise" data-name="overhead press shoulder press" data-muscles="shoulders arms core" data-equipment="Barbell">
+          <div class="plate">
+            <div data-bodymap data-muscles="shoulders arms core"></div>
+            <div>
+              <h3>Standing Overhead Press</h3>
+              <ul class="meta">
+                <li class="level-intermediate">Intermediate</li>
+                <li>Barbell</li>
+                <li>Shoulders · Arms</li>
+              </ul>
+              <p class="summary">Pressing weight over your head while standing tall. Honest shoulder strength with nothing to hide behind.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= Bent-over row ================= -->
+        <article class="exercise" data-name="bent-over barbell row" data-muscles="back arms core" data-equipment="Barbell">
+          <div class="plate">
+            <div data-bodymap data-muscles="back arms core"></div>
+            <div>
+              <h3>Bent-Over Row</h3>
+              <ul class="meta">
+                <li class="level-intermediate">Intermediate</li>
+                <li>Barbell</li>
+                <li>Back · Arms</li>
+              </ul>
+              <p class="summary">The balance to all your pressing. Thickens the mid-back and teaches you to hold a hinge position under load.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= Dumbbell bench press ================= -->
+        <article class="exercise" data-name="dumbbell bench press" data-muscles="chest shoulders arms" data-equipment="Dumbbells">
+          <div class="plate">
+            <div data-bodymap data-muscles="chest shoulders arms"></div>
+            <div>
+              <h3>Dumbbell Bench Press</h3>
+              <ul class="meta">
+                <li class="level-beginner">Beginner</li>
+                <li>Dumbbells</li>
+                <li>Chest · Arms</li>
+              </ul>
+              <p class="summary">Kinder on the shoulders than a barbell, and each arm has to earn its own rep.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= Walking lunge ================= -->
+        <article class="exercise" data-name="walking lunge" data-muscles="legs core" data-equipment="Dumbbells">
+          <div class="plate">
+            <div data-bodymap data-muscles="legs core"></div>
+            <div>
+              <h3>Walking Lunge</h3>
+              <ul class="meta">
+                <li class="level-beginner">Beginner</li>
+                <li>Dumbbells</li>
+                <li>Legs · Core</li>
+              </ul>
+              <p class="summary">One leg at a time, which exposes the side that has been coasting. Also brutal for balance.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= Romanian deadlift ================= -->
+        <article class="exercise" data-name="romanian deadlift rdl hinge" data-muscles="legs back" data-equipment="Barbell">
+          <div class="plate">
+            <div data-bodymap data-muscles="legs back"></div>
+            <div>
+              <h3>Romanian Deadlift</h3>
+              <ul class="meta">
+                <li class="level-intermediate">Intermediate</li>
+                <li>Barbell</li>
+                <li>Legs · Back</li>
+              </ul>
+              <p class="summary">The hamstring and glute builder. Teaches the hip hinge better than any other lift.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= Plank ================= -->
+        <article class="exercise" data-name="front plank" data-muscles="core shoulders" data-equipment="Bodyweight">
+          <div class="plate">
+            <div data-bodymap data-muscles="core shoulders"></div>
+            <div>
+              <h3>Front Plank</h3>
+              <ul class="meta">
+                <li class="level-beginner">Beginner</li>
+                <li>Bodyweight</li>
+                <li>Core</li>
+              </ul>
+              <p class="summary">Not about how long you can last. It is about how hard you can brace for a short time.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= Glute bridge ================= -->
+        <article class="exercise" data-name="glute bridge hip thrust" data-muscles="legs core" data-equipment="Bodyweight">
+          <div class="plate">
+            <div data-bodymap data-muscles="legs core"></div>
+            <div>
+              <h3>Glute Bridge</h3>
+              <ul class="meta">
+                <li class="level-beginner">Beginner</li>
+                <li>Bodyweight</li>
+                <li>Legs · Core</li>
+              </ul>
+              <p class="summary">Wakes up glutes that have spent the day in a chair. Useful before squats and deadlifts.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= Farmer's carry ================= -->
+        <article class="exercise" data-name="farmers carry loaded carry" data-muscles="core shoulders arms legs" data-equipment="Dumbbells">
+          <div class="plate">
+            <div data-bodymap data-muscles="core shoulders arms legs"></div>
+            <div>
+              <h3>Farmer's Carry</h3>
+              <ul class="meta">
+                <li class="level-beginner">Beginner</li>
+                <li>Dumbbells</li>
+                <li>Core · Grip</li>
+              </ul>
+              <p class="summary">Pick up something heavy and walk. The most directly useful thing in this library.</p>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /.grid -->
+
+      <div class="empty" id="no-results" hidden>
+        <p>No exercises match that. Try a different muscle group or a simpler search term.</p>
+        <button class="btn btn-quiet" type="button" id="reset-filters">Show all exercises</button>
+      </div>
+
     </div>
+  </section>
 
-    <div class="search-box">
-      <input type="text" id="searchInput" onkeyup="searchExercise()" placeholder="Search exercise...">
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div>
+      <a class="wordmark" href="index.html">Fit<span>Flex</span></a>
+      <p>An exercise library written by coaches, for people who want to train without guessing.</p>
     </div>
-
-    <div class="exercise-list">
-
-      <div class="exercise" data-muscle="legs">
-        <h3>Barbell Back Squat</h3>
-        <span class="tag">Legs</span>
-        <span class="tag">Intermediate</span>
-        <span class="tag">Barbell</span>
-        <p>Stand with feet shoulder width apart, bar on your shoulders. Bend your knees and lower down like sitting on a chair, then push back up.</p>
-      </div>
-
-      <div class="exercise" data-muscle="chest">
-        <h3>Push-Up</h3>
-        <span class="tag">Chest</span>
-        <span class="tag">Beginner</span>
-        <span class="tag">Bodyweight</span>
-        <p>Keep your body straight from head to heels. Lower your chest to the floor and push back up.</p>
-      </div>
-
-      <div class="exercise" data-muscle="back">
-        <h3>Conventional Deadlift</h3>
-        <span class="tag">Back</span>
-        <span class="tag">Advanced</span>
-        <span class="tag">Barbell</span>
-        <p>Bend at the hips, grip the bar, keep your back flat and stand up straight while holding the bar.</p>
-      </div>
-
-      <div class="exercise" data-muscle="back">
-        <h3>Pull-Up</h3>
-        <span class="tag">Back</span>
-        <span class="tag">Advanced</span>
-        <span class="tag">Pull-up Bar</span>
-        <p>Hang from the bar and pull yourself up until your chin is above it, then lower down slowly.</p>
-      </div>
-
-      <div class="exercise" data-muscle="shoulders">
-        <h3>Overhead Press</h3>
-        <span class="tag">Shoulders</span>
-        <span class="tag">Intermediate</span>
-        <span class="tag">Barbell</span>
-        <p>Hold the bar at your shoulders and press it straight up above your head, then lower back down.</p>
-      </div>
-
-      <div class="exercise" data-muscle="back">
-        <h3>Bent-Over Row</h3>
-        <span class="tag">Back</span>
-        <span class="tag">Intermediate</span>
-        <span class="tag">Barbell</span>
-        <p>Bend forward slightly, let the bar hang, then pull it up towards your stomach and lower it back down.</p>
-      </div>
-
-      <div class="exercise" data-muscle="chest">
-        <h3>Dumbbell Bench Press</h3>
-        <span class="tag">Chest</span>
-        <span class="tag">Beginner</span>
-        <span class="tag">Dumbbells</span>
-        <p>Lie on a bench holding a dumbbell in each hand. Push them up above your chest, then lower slowly.</p>
-      </div>
-
-      <div class="exercise" data-muscle="legs">
-        <h3>Walking Lunge</h3>
-        <span class="tag">Legs</span>
-        <span class="tag">Beginner</span>
-        <span class="tag">Dumbbells</span>
-        <p>Step forward and lower your back knee towards the floor, then push up and step forward with the other leg.</p>
-      </div>
-
-      <div class="exercise" data-muscle="legs">
-        <h3>Romanian Deadlift</h3>
-        <span class="tag">Legs</span>
-        <span class="tag">Intermediate</span>
-        <span class="tag">Barbell</span>
-        <p>Keep your legs almost straight and lower the bar down your legs, then squeeze your hips forward to stand.</p>
-      </div>
-
-      <div class="exercise" data-muscle="core">
-        <h3>Front Plank</h3>
-        <span class="tag">Core</span>
-        <span class="tag">Beginner</span>
-        <span class="tag">Bodyweight</span>
-        <p>Rest on your forearms and toes, keep your body in a straight line, and hold the position.</p>
-      </div>
-
-      <div class="exercise" data-muscle="legs">
-        <h3>Glute Bridge</h3>
-        <span class="tag">Legs</span>
-        <span class="tag">Beginner</span>
-        <span class="tag">Bodyweight</span>
-        <p>Lie on your back with knees bent, push your hips up towards the ceiling, then lower back down.</p>
-      </div>
-
-      <div class="exercise" data-muscle="core">
-        <h3>Farmer's Carry</h3>
-        <span class="tag">Core</span>
-        <span class="tag">Beginner</span>
-        <span class="tag">Dumbbells</span>
-        <p>Hold a heavy dumbbell in each hand and walk in a straight line while keeping your body upright.</p>
-      </div>
-
-    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="index.html">Exercises</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
+  <div class="shell">
+    <p class="safety-note">FitFlex is educational and is not medical advice. If you are new to training, recovering from an injury or managing a health condition, speak to a doctor or a qualified professional before starting. © 2026 FitFlex.</p>
+  </div>
+</footer>
 
-  <footer>
-    <p>FitFlex - Exercise Library</p>
-    <p>This site is for learning purposes only, not medical advice.</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
