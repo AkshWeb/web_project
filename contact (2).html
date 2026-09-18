@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — FitFlex</title>
+<meta name="description" content="Ask a coach about form, request an exercise for the library, or report a mistake in an entry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#contact-form">Skip to the form</a>
+
+<header class="site-header">
+  <div class="shell">
+    <a class="wordmark" href="index.html">Fit<span>Flex</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Exercises</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-head">
+    <div class="shell">
+      <h1>Ask a coach.</h1>
+      <p>Send a form question, request a movement for the library, or tell us where an entry is wrong. A coach reads every message and replies within two working days.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell two-col">
+
+      <div>
+        <div class="form-status" id="form-status" tabindex="-1" role="status" hidden>
+          <p></p>
+        </div>
+
+        <form class="form" id="contact-form" action="#" method="post" novalidate>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" autocomplete="name">
+            <span class="error" id="name-error" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <span class="hint">We only use this to reply to you.</span>
+            <input type="email" id="email" name="email" autocomplete="email">
+            <span class="error" id="email-error" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="topic">What is this about?</label>
+            <select id="topic" name="topic">
+              <option value="">Choose one</option>
+              <option value="form">A question about form</option>
+              <option value="request">Request a new exercise</option>
+              <option value="correction">Report a mistake in an entry</option>
+              <option value="routine">Help building a routine</option>
+              <option value="other">Something else</option>
+            </select>
+            <span class="error" id="topic-error" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="message">Your message</label>
+            <span class="hint">If it is about a specific exercise, name it — it helps us answer properly.</span>
+            <textarea id="message" name="message"></textarea>
+            <span class="error" id="message-error" aria-live="polite"></span>
+          </div>
+
+          <button class="btn" type="submit">Send message</button>
+        </form>
+      </div>
+
+      <aside class="contact-aside">
+        <h2>Other ways to reach us</h2>
+        <dl>
+          <dt>Email</dt>
+          <dd><a href="mailto:akshit.chaudhary.25cse@bmu.edu.in">akshit.chaudhary.25cse@bmu.edu.in</a></dd>
+
+          <dt>Phone</dt>
+          <dd><a href="tel:+919084955030">9084955030</a> — weekdays, 9am to 6pm IST</dd>
+
+          <dt>Address</dt>
+          <dd>BML Munjal University<br>NH-8, Sidhrawali<br>Gurugram, Haryana 122413, India</dd>
+
+          <dt>Reply time</dt>
+          <dd>Two working days. Corrections to an entry usually go live the same week.</dd>
+        </dl>
+
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div>
+      <a class="wordmark" href="index.html">Fit<span>Flex</span></a>
+      <p>An exercise library written by coaches, for people who want to train without guessing.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="index.html">Exercises</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="shell">
+    <p class="safety-note">FitFlex is educational and is not medical advice. If you are new to training, recovering from an injury or managing a health condition, speak to a doctor or a qualified professional before starting. © 2026 FitFlex.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
